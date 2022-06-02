@@ -1,5 +1,6 @@
 # Kakao_Chatbot_Stock_Helper
 - 본 프로젝트는 카카오톡 오픈빌더를 이용하여 주식 입문자를 위한 챗봇을 구현한 것이다.
+![image](https://user-images.githubusercontent.com/101307758/171578468-013ce4e2-e419-4390-8b80-fbb44dd72fc3.png)
 
 # 목표
 - 주식 입문자들에게 유용한 정보를 제공하고자 한다.
@@ -27,4 +28,4 @@
 https://www.youtube.com/watch?v=M0EddEJAT_Y
 
 # 챗봇 링크
-
+http://pf.kakao.com/_YvNLb/chat
