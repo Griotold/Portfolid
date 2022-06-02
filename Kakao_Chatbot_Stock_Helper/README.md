@@ -22,3 +22,9 @@
 - 사용 라이브러리 : pandas, requests, BeautifulSoup, flask, jsonify, psycopg2
 - 기간: 2022.05.20. ~ 2022.06.03.
 - 담당업무 : 챗봇 전체 시나리오 기획, 웹크롤링을 통한 데이터 수집, 카카오톡 스킬 구현, DB 구축
+
+# 시연 영상
+https://www.youtube.com/watch?v=M0EddEJAT_Y
+
+# 챗봇 링크
+
