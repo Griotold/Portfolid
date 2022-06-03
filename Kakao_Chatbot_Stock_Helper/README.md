@@ -30,17 +30,22 @@
 - 이번 프로젝트에서 가장 중요했다고 생각되는 것이 스킬 서버를 구현하는 것이었다. 우리 챗봇의 주요 서비스가 실시간 주식 시세를 제공하는 것이기 때문이다.
 ![image](https://user-images.githubusercontent.com/101307758/171761782-64c035d3-7eb6-485a-8678-2123d24984c8.png)
 
-- HEROKU를 이용하여 스킬 서버를 만들었다. 폴더 내에 해당 파일들이 모두 있는 상태에서 
+- HEROKU를 이용하여 스킬 서버를 만들었다. HEROKU 로그인 후 폴더 내에 해당 파일들이 모두 있는 상태에서 
 ![image](https://user-images.githubusercontent.com/101307758/171762093-84ada926-269a-4706-b919-92238d63ae0b.png)
-- 깃으로 배포를 한다.
-'''Python
+- 깃으로 배포를 한다. 자세한 사항은 code폴더에 main.py를 확인.
+
+```Python
 git init
 git add.
 git commit -m "m"
 git push heroku master
 
-'''
-
+```
+- 스킬 서버를 만든 후, 챗봇에 스킬을 등록한다.
+- 스킬이 정상 작동하는지 응답 미리보기 테스트를 한다.
+- 시나리오 블록에 스킬을 설정한다.
+- 봇 테스트를 진행한다.
+- 최종 배포를 한다.
 
 
 # 시연 영상
