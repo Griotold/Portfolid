@@ -29,6 +29,12 @@
 
 - 이번 프로젝트에서 가장 중요했다고 생각되는 것이 스킬 서버를 구현하는 것이었다. 우리 챗봇의 주요 서비스가 실시간 주식 시세를 제공하는 것이기 때문이다.
 ![image](https://user-images.githubusercontent.com/101307758/171761782-64c035d3-7eb6-485a-8678-2123d24984c8.png)
+
+- HEROKU를 이용하여 스킬 서버를 만들었다. 
+
+
+
+
 # 시연 영상
 https://www.youtube.com/watch?v=M0EddEJAT_Y
 
