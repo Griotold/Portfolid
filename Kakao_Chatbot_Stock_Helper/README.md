@@ -52,7 +52,7 @@ git push heroku master
 - 최종 배포를 한다.
 
 ## 2. 웹 크롤링
-- 사용자들에게 제공할 데이터는 대부분 웹 크롤링으로 수집했다. 기획 단계에서는 Selenium 라이브러리를 이용하여 웹 크롤링을 하려 했으나, 카카오톡 스킬 서버에 연동하는 과정에서 카카오톡이 지정한 지연 시간 5초가 초과되는 상황 때문에 사용을 할 수가 없었다. 조사 결과 WebChromedriver 앱을 이용하는 것 때문인 것으로 확인 됐다. 결국 BeautifulSoup 으로 바꿔서 진행했다. AWS EC2로 배포하면 Selenium으로 스킬 서버 연동이 가능하나, 유료인 관계로 다음 기회에 하기로 한다. 자세한 사항은 code폴더에.
+- 사용자들에게 제공할 데이터는 대부분 웹 크롤링으로 수집했다. 기획 단계에서는 Selenium 라이브러리를 이용하여 웹 크롤링을 하려 했으나, 카카오톡 스킬 서버에 연동하는 과정에서 카카오톡이 지정한 지연 시간 5초가 초과되는 상황 때문에 사용을 할 수가 없었다. 조사 결과 WebChromedriver 앱을 이용하는 것 때문인 것으로 확인 됐다. 결국 BeautifulSoup 으로 바꿔서 진행했다. AWS EC2로 배포하면 Selenium으로 스킬 서버 연동이 가능하나, 유료인 관계로 다음 기회에 하기로 했다. 자세한 사항은 code폴더에.
 - 예시: 코스피 종목 중 상승주 TOP10
 
 ![image](https://user-images.githubusercontent.com/101307758/171768102-41624e26-b398-46a7-8e44-2a02523616fc.png)
@@ -63,7 +63,8 @@ git push heroku master
 
 ![image](https://user-images.githubusercontent.com/101307758/171768644-12fc9bd1-42cd-46b1-b71a-253f296d43c1.png)
 
-
+# 더 궁금한 부분은...
+- code 폴더와 pdf파일을 확인하세요.
 
 # 시연 영상
 https://www.youtube.com/watch?v=M0EddEJAT_Y
