@@ -33,7 +33,7 @@
 - HEROKU를 이용하여 스킬 서버를 만들었다. 폴더 내에 해당 파일들이 모두 있는 상태에서 
 ![image](https://user-images.githubusercontent.com/101307758/171762093-84ada926-269a-4706-b919-92238d63ae0b.png)
 - 깃으로 배포를 한다.
-'''c
+'''Python
 git init
 git add.
 git commit -m "m"
