@@ -47,7 +47,15 @@ git push heroku master
 ![image](https://user-images.githubusercontent.com/101307758/171763453-f1426077-4ee4-49ba-9f66-865201f2377d.png)
 - 시나리오 블록에 스킬을 설정한다.
 - 봇 테스트를 진행한다.
+
+![image](https://user-images.githubusercontent.com/101307758/171763641-d3caede9-ecec-4a76-b740-a2134861b073.png)
 - 최종 배포를 한다.
+
+## 2. 웹 크롤링
+- 사용자들에게 제공할 데이터는 대부분 웹 크롤링으로 수집했다. 기획 단계에서는 Selenium 라이브러리를 이용하여 웹 크롤링을 하려 했으나, 카카오톡 스킬 서버에 연동하는 과정에서 카카오톡이 지정한 지연 시간 5초가 초과되는 상황 때문에 사용을 할 수가 없었다. 조사 결과 WebChromedriver 앱을 이용하는 것 때문인 것으로 확인 됐다. 결국 BeautifulSoup 으로 바꿔서 진행했다. AWS EC2로 배포하면 Selenium으로 스킬 서버 연동이 가능하나, 유료인 관계로 다음 기회에 하기로 한다. 자세한 사항은 code폴더에.
+
+## 3. 데이터베이스
+- 모의 주식 투자 체험, 사용자 평점 수집에 데이터베이스를 사용했다. 작업도구로 PostgreSQL을 사용했다.   
 
 
 # 시연 영상
