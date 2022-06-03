@@ -27,10 +27,10 @@
 # 중요 포인트
 ## 1. 스킬 서버
 
-- 이번 프로젝트에서 가장 중요했다고 생각되는 것이 스킬 서버를 구현하는 것이었다. 우리 챗봇의 주요 서비스가 실시간 주식 시세를 제공하는 것이기 때문이다.
+- 이번 프로젝트에서 가장 중요했다고 생각되는 것이 스킬 서버를 구현하는 것이었다. 우리 챗봇의 주요 서비스가 실시간 주식 시세를 제공하는 것이기 때문이다. HEROKU와 goormIDE 중에 하나를 선택해야했다. goormIDE 같은 경우, HEROKU에 비해 배포가 빠른 장점이 있지만, 작업 환경을 끄면, 서버가 돌아가지 않는 문제 때문에 HEROKU를 사용하게 되었다. 
 ![image](https://user-images.githubusercontent.com/101307758/171761782-64c035d3-7eb6-485a-8678-2123d24984c8.png)
 
-- HEROKU를 이용하여 스킬 서버를 만들었다. HEROKU 로그인 후 폴더 내에 해당 파일들이 모두 있는 상태에서 
+- HEROKU 로그인 후 폴더 내에 해당 파일들이 모두 있는 상태에서 
 ![image](https://user-images.githubusercontent.com/101307758/171762093-84ada926-269a-4706-b919-92238d63ae0b.png)
 - 깃으로 배포를 한다. 자세한 사항은 code폴더에 [main.py](https://github.com/Griotold/Portfolio/blob/main/Kakao_Chatbot_Stock_Helper/app/main.py)를 확인.
 
