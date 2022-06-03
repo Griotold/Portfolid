@@ -42,6 +42,7 @@ git push heroku master
 
 ```
 - 스킬 서버를 만든 후, 챗봇에 스킬을 등록한다.
+![image](https://user-images.githubusercontent.com/101307758/171763370-f8cf0ea0-6836-4ebe-a5f6-0a47d962eb3b.png)
 - 스킬이 정상 작동하는지 응답 미리보기 테스트를 한다.
 - 시나리오 블록에 스킬을 설정한다.
 - 봇 테스트를 진행한다.
