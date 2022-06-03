@@ -61,6 +61,7 @@ git push heroku master
 - 모의 주식 투자 체험, 사용자 평점 수집에 데이터베이스를 사용했다. 작업도구로 PostgreSQL을 사용했다. Python으로 쿼리를 작성하기 위해 psycopg2 라이브러리를 사용했다. 자세한 사항은 code폴더에.
 - 예시: 모의 주식 체험
 
+![image](https://user-images.githubusercontent.com/101307758/171768644-12fc9bd1-42cd-46b1-b71a-253f296d43c1.png)
 
 
 
