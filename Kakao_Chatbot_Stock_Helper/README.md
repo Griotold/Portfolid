@@ -32,7 +32,7 @@
 
 - HEROKU를 이용하여 스킬 서버를 만들었다. HEROKU 로그인 후 폴더 내에 해당 파일들이 모두 있는 상태에서 
 ![image](https://user-images.githubusercontent.com/101307758/171762093-84ada926-269a-4706-b919-92238d63ae0b.png)
-- 깃으로 배포를 한다. 자세한 사항은 code폴더에 main.py를 확인.
+- 깃으로 배포를 한다. 자세한 사항은 code폴더에 [main.py](https://github.com/Griotold/Portfolio/blob/main/Kakao_Chatbot_Stock_Helper/app/main.py)를 확인.
 
 ```Python
 git init
@@ -52,19 +52,19 @@ git push heroku master
 - 최종 배포를 한다.
 
 ## 2. 웹 크롤링
-- 사용자들에게 제공할 데이터는 대부분 웹 크롤링으로 수집했다. 기획 단계에서는 Selenium 라이브러리를 이용하여 웹 크롤링을 하려 했으나, 카카오톡 스킬 서버에 연동하는 과정에서 카카오톡이 지정한 지연 시간 5초가 초과되는 상황 때문에 사용을 할 수가 없었다. 조사 결과 WebChromedriver 앱을 이용하는 것 때문인 것으로 확인 됐다. 결국 BeautifulSoup 으로 바꿔서 진행했다. AWS EC2로 배포하면 Selenium으로 스킬 서버 연동이 가능하나, 유료인 관계로 다음 기회에 하기로 했다. 자세한 사항은 code폴더에.
+- 사용자들에게 제공할 데이터는 대부분 웹 크롤링으로 수집했다. 기획 단계에서는 Selenium 라이브러리를 이용하여 웹 크롤링을 하려 했으나, 카카오톡 스킬 서버에 연동하는 과정에서 카카오톡이 지정한 지연 시간 5초가 초과되는 상황 때문에 사용을 할 수가 없었다. 조사 결과 WebChromedriver 앱을 이용하는 것 때문인 것으로 확인 됐다. 결국 BeautifulSoup 으로 바꿔서 진행했다. AWS EC2로 배포하면 Selenium으로 스킬 서버 연동이 가능하나, 유료인 관계로 다음 기회에 하기로 했다. 자세한 사항은 [code폴더](https://github.com/Griotold/Portfolio/tree/main/Kakao_Chatbot_Stock_Helper/code)에.
 - 예시: 코스피 종목 중 상승주 TOP10
 
 ![image](https://user-images.githubusercontent.com/101307758/171768102-41624e26-b398-46a7-8e44-2a02523616fc.png)
 
 ## 3. 데이터베이스
-- 모의 주식 투자 체험, 사용자 평점 수집에 데이터베이스를 사용했다. 작업도구로 PostgreSQL을 사용했다. Python으로 쿼리를 작성하기 위해 psycopg2 라이브러리를 사용했다. 자세한 사항은 code폴더에.
+- 모의 주식 투자 체험, 사용자 평점 수집에 데이터베이스를 사용했다. 작업도구로 PostgreSQL을 사용했다. Python으로 쿼리를 작성하기 위해 psycopg2 라이브러리를 사용했다. 자세한 사항은 [code폴더](https://github.com/Griotold/Portfolio/tree/main/Kakao_Chatbot_Stock_Helper/code)에.
 - 예시: 모의 주식 체험
 
 ![image](https://user-images.githubusercontent.com/101307758/171768644-12fc9bd1-42cd-46b1-b71a-253f296d43c1.png)
 
 # 더 궁금한 부분은...
-- code 폴더와 pdf파일을 확인하세요.
+- [code폴더](https://github.com/Griotold/Portfolio/tree/main/Kakao_Chatbot_Stock_Helper/code)와 [pdf파일](https://github.com/Griotold/Portfolio/blob/main/Kakao_Chatbot_Stock_Helper/2%ED%8C%80%20%EC%A7%80%EC%9A%B0%EC%A3%BC%ED%8C%80%20PPT_%EC%B5%9C%EC%A2%85%EB%B3%B8.pdf)을 확인하세요.
 
 # 시연 영상
 https://www.youtube.com/watch?v=M0EddEJAT_Y
