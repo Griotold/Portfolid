@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="layout/basic">
+	<th:block layout:fragment="title">
+		<title>개인정보수정</title>
+	</th:block>
+	
+	<th:block layout:fragment="sidebar">
+		<h1>개인정보수정</h1>
+		<div class="col-md-3">
+			<!-- 사이드 바 메뉴-->
+	  		<!-- 패널 타이틀1 -->
+			<div class="panel panel-info">
+	    		<div class="panel-heading">
+	      			<h3 class="panel-title">Panel Title</h3>
+	    		</div>
+	    		<!-- 사이드바 메뉴목록1 -->
+	    		<ul class="list-group">
+	      			<li class="list-group-item"><a th:href="@{/user/mypage.do}">마이페이지</a></li>
+	      			<li class="list-group-item"><a href="#">작성글</a></li>
+	      			<li class="list-group-item"><a href="#">작성댓글</a></li>
+	      			<li class="list-group-item"><a href="@{/user/edit.do}">개인정보수정</a></li>
+	      			<li class="list-group-item"><a href="#">회원탈퇴</a></li>
+	    		</ul>
+			</div>
+		</div> 
+	</th:block>
+	
+	<th:block layout:fragment="content">
+		<div class="col-md-9">
+			<div class="wrapper">                          <!-- onsubmit="join(this)" -->
+				<form id="edit_form" th:action="@{/user/edit.do}" th:object="${edit}" method="post" th:onsubmit="return edit(this);">
+						<h1>비밀번호 재확인</h1>
+							<div class="mb-3">
+					            <label for="password" class="form-label">비밀번호</label>
+					            <input type="password" th:field="*{password}" class="pw_input">
+					            <span class="final_pw_ck">비밀번호를 입력해주세요.</span>
+					        </div>	
+				</form>
+			</div>
+		</div>	
+		<div class="btn_wrap text-center">
+			<input type="button" value="개인정보수정" class="btn" onclick="location.href='/user/edit.do'">
+			<input type="button" value="메인으로" class="btn" onclick="location.href='/board/list.do'">																				
+		</div>
+	</th:block>

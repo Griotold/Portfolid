@@ -1,0 +1,259 @@
+/* Include variables for LESS */
+/* Import file styles */
+/* @import 'https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700';
+@import url(../fonts/font-awesome/css/font-awesome.min.css);
+ @import url(../plugin/bootstrap/css/bootstrap.min.css); */
+
+
+*{
+  box-sizing: border-box;
+  margin: 0;
+}
+
+
+body{
+  text-align: center;
+}
+
+h1{ 
+  display: inline-block;
+  position: relative;
+  height: 200px;
+  line-height: 250px;
+}
+
+/* .wrapper{
+  display: block;
+  position: absolute;
+  top: 475%; left: 50%;
+  transform: translate(-50%, -50%);
+  padding:30px;
+  border-top: 8px solid #13be46;
+  border-radius: 5px;
+  box-shadow: 0 0px 70px rgba(0, 0, 0, 0.1);
+  padding: 0 30px !important;
+
+} */ 
+
+
+.mb-3{
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.id_input, .pw_input, .pwck_input, .name_input , .nickname_input , .email_input{
+    font-size: 12px;
+    width:400px;
+    height: 100%;
+    padding: 15px 15px 15px 8px;
+    margin-bottom: 5px;
+    color: #000000;
+    border : 0.5px dashed rgba(0,0,0,0.2);
+    border-radius: 3px;
+    outline: 0;
+    background-color: #fff
+}
+
+.mail_check_input {
+  font-size: 12px;
+  width:400px;
+  height: 100%;
+  padding: 15px 15px 15px 8px;
+  margin-bottom: 5px;
+  color: #000000;
+  border : 0.5px dashed rgba(0,0,0,0.2);
+  border-radius: 3px;
+  outline: 0;
+
+}
+
+#mail_check_button {
+  width: 230px;
+  height: 45px;
+  font-size: 17px;
+  margin-top: 10px;
+  color: #fff;
+  background-color: #13be46;
+  border: none;
+  border-radius: 3px;
+  outline: 0;
+  cursor: pointer;
+  transition: 0.3s ease;
+
+}
+
+#mail_check_button:hover {
+  background-color:  #0fa03b;
+  
+}
+
+.pwqc_Answer_input {
+  font-size: 12px;
+  width:400px;
+  height: 100%;
+  padding: 15px 15px 15px 8px;
+  margin-bottom: 5px;
+  color: #000000;
+  border : 0.5px dashed rgba(0,0,0,0.2);
+  border-radius: 3px;
+  outline: 0;
+  background-color: #fff
+    
+
+}
+
+#join_button {
+  width: 230px;
+  height: 45px;
+  font-size: 17px;
+  margin-top: 10px;
+  color: #fff;
+  background-color: #13be46;
+  border: none;
+  border-radius: 3px;
+  outline: 0;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+
+#join_button:hover{
+  background-color:  #0fa03b;
+}
+
+.pwqc_input {
+  -o-appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  font-size: 12px;
+  width:400px;
+  height: 100%;
+  padding: 15px 15px 15px 8px;
+  margin-bottom: 5px;
+  color: #aaa;
+  border : 0.5px dashed rgba(0,0,0,0.2);
+  border-radius: 3px;
+  outline: 0;
+  background-color: #fff
+}
+
+.pwqc_input option {
+
+  padding: 3px 0;
+  font-size: 16px;
+}
+
+
+
+
+
+/*아이디 중복검사*/
+/* 중복아이디 존재하지 않는경우 */
+.id_input_re_1{
+	color : green;
+	display : none;
+}
+/* 중복아이디 존재하는 경우 */
+.id_input_re_2{
+	color : red;
+	display : none;
+}
+/* 중복닉네임 존재하지 않는경우 */
+.nickname_input_re_1{
+	color : green;
+	display : none;
+}
+/* 중복닉네임 존재하는 경우 */
+.nickname_input_re_2{
+	color : red;
+	display : none;
+}
+/* 이메일 인증 코드 비활성화
+#mail_check_input_box_false{
+    background-color:#ebebe4;
+}
+*/
+
+/* 이메일 인증 코드 활성화*/ 
+#mail_check_input_box_true{
+    background-color:white;
+}
+/* 이메일 인증 코드가 맞을 경우*/
+.correct{
+    color : green;
+}
+/* 이메일 인증 코드가 틀릴 경우*/
+.incorrect{
+    color : red;
+}
+
+/* 유효성 검사 문구 */
+ 
+.final_id_ck{
+    display: none;
+    color : red;
+}
+.final_pw_ck{
+    display: none;
+    color : red;
+}
+.final_pwck_ck{
+    display: none;
+    color : red;
+}
+.final_name_ck{
+    display: none;
+    color : red;
+}
+.final_email_ck{
+    display: none;
+    color : red;
+}
+.final_nickname_ck{
+    display: none;
+    color : red;
+}
+.final_pwqc_ck{
+	display: none;
+	color : red;
+}
+.final_pwqc_Answer_ck{
+	display: none;
+	color : red;
+}
+
+/* 비밀번호 확인 일치 유효성검사 */
+.pwck_input_re_1{
+        color : green;
+        display : none;    
+}
+.pwck_input_re_2{
+        color : red;
+        display : none;    
+}
+/* 이메일 전*/
+/*---------------------------------------------------------------------*/
+.form-label {
+    /* display: inline-block;
+    width: 500px;
+    padding: 0px 0px 15px 0px; */
+}
+.form-group .form-control {height: auto;}
+.form-group .form-control.file_list a {display: block;}
+.form-group .form-control.file_list button {width: 20px; height: 20px; margin-left: 3px; padding: 0; line-height: 20px;}
+.notice-list button {position: absolute; right: 15px; bottom: 5px;}
+
+#email-button{
+	width: 230px;
+    height: 45px;
+    font-size: 17px;
+    margin-top: 10px;
+    color: #fff;
+    background-color: #13be46;
+    border: none;
+    border-radius: 3px;
+    outline: 0;
+    cursor: pointer;
+    transition: 0.3s ease;
+}

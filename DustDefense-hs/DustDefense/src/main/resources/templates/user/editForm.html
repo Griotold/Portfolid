@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ko"
+	  xmlns ="http://www.w3.org/1999/xhtml"
+	  xmlns:th="http://www.thymeleaf.org" 
+	  xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5"
+	  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" 
+	  xsi:schemaLocation="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5 "
+	  layout:decorate="layout/basic">
+	<th:block layout:fragment="title">
+		<title>개인정보수정</title>
+	</th:block>
+	
+	<th:block layout:fragment="sidebar">
+		<h1>개인정보수정</h1>
+		<div class="col-md-3">
+			<!-- 사이드 바 메뉴-->
+	  		<!-- 패널 타이틀1 -->
+			<div class="panel panel-info">
+	    		<div class="panel-heading">
+	      			<h3 class="panel-title">Panel Title</h3>
+	    		</div>
+	    		<!-- 사이드바 메뉴목록1 -->
+	    		<ul class="list-group">
+	      			<li class="list-group-item"><a th:href="@{/user/mypage.do}">마이페이지</a></li>
+	      			<li class="list-group-item"><a href="#">작성글</a></li>
+	      			<li class="list-group-item"><a href="#">작성댓글</a></li>
+	      			<li class="list-group-item"><a th:href="@{/user/edit.do}">개인정보수정</a></li>
+	      			<li class="list-group-item"><a th:href="@{/user/delete.do}">회원탈퇴</a></li>
+	    		</ul>
+			</div>
+		</div> 
+	</th:block>
+	<th:block layout:fragment="content">
+		<div class="col-md-9">         <!--th:onsubmit="return join(this);"  -->
+			<form id="edit_form" class="form-horizontal form-view">
+				<div sec:authorize="hasRole('USER')"></div>
+				<div sec:authorize="hasRole('MANAGER')"></div>
+				<div sec:authorize="hasRole('ADMIN')"></div>
+				
+				<div sec:authorize="isAuthenticated()"></div>
+					<div class="form-group">
+						<label for="inp-type-1" class="col-sm-2 control-label">아이디</label>
+						<div class="col-sm-10">
+							<input type="text" class="form-control" sec:authentication="principal.username" id="username" readonly></p> <!-- *은 객체에 접근했을때 속성에 접근할 수 있는 문법 -->
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="inp-type-1" class="col-sm-2 control-label">비밀번호</label>
+						<div class="col-sm-10">
+							<input type="password" class="form-control" placeholder="비밀번호를 입력하세요" id="password">
+						</div>
+					</div>			
+					<!-- 비밀번호 <input type="password" name="pw" placeholder="비밀번호를 입력하세요" required><br> -->
+					<!-- <div class="form-group">
+						<label for="inp-type-1" class="col-sm-2 control-label">이름</label>
+						<div class="col-sm-10">
+							<input class="form-control" th:field="*{name}" placeholder="*{name}"></input> *은 객체에 접근했을때 속성에 접근할 수 있는 문법
+						</div>
+					</div> -->
+					<!-- <div class="form-group">
+						<label for="inp-type-1" class="col-sm-2 control-label">닉네임</label>
+						<div class="col-sm-10">
+							<input class="form-control" th:field="*{nickname}" placeholder="*{nickname}"></input> *은 객체에 접근했을때 속성에 접근할 수 있는 문법
+						</div>
+					</div> -->	
+					<div class="form-group">
+						<label for="inp-type-1" class="col-sm-2 control-label">이메일</label>
+						<div class="col-sm-10">
+							<input class="form-control" sec:authentication="principal.email" id="email"></input> <!-- *은 객체에 접근했을때 속성에 접근할 수 있는 문법 -->
+						</div>
+					</div>
+					
+					<!-- <div class="form-group">
+						<label for="inp-type-1" class="col-sm-2 control-label">비밀번호찾기질문</label>
+						<div class="col-sm-10">
+							<input class="form-control" th:field="*{passwordQuestionCode}" placeholder="*{passwordQuestionCode}"></input> *은 객체에 접근했을때 속성에 접근할 수 있는 문법
+						</div>
+					</div> -->
+					<!-- <div class="form-group">
+						<label for="inp-type-1" class="col-sm-2 control-label">비밀번호찾기질문 답</label>
+						<div class="col-sm-10">
+							<input class="form-control" th:field="*{passwordQuestionAnswer}" placeholder="*{passwordQuestionCode}"></input> *은 객체에 접근했을때 속성에 접근할 수 있는 문법
+						</div>
+					</div> -->
+					
+					<input type="submit" class="btn" value="회원정보수정하기">
+					<input type="button" class="btn" value="메인으로" onclick="location.href='/board/list.do'">
+			</form>
+		</div>
+	</th:block>
+	<th:block layout:fragment="script">
+		<script th:inline="javascript">
+			let index = {
+					init: function(){
+						$("#btn-update").on("click", ()=>{
+							this.update();
+						});
+					},
+					
+					update: function(){
+						//alert('user의 save함수 호출됨');
+						let data = {
+								
+								username: $("#username").val(),
+								password: $("#password").val(),
+								email: $("#email").val(),
+						};
+						
+						
+						$.ajax({
+							//회원정보 수정 요청
+							
+						})
+					}
+					
+					
+					
+			}
+			
+		
+		
+		</script>
+	</th:block>

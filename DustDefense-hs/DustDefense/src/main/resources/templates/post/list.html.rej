@@ -1,0 +1,48 @@
+diff a/DustDefense/src/main/resources/templates/post/list.html b/DustDefense/src/main/resources/templates/post/list.html	(rejected hunks)
+@@ -73,6 +73,8 @@
+             /*<![CDATA[*/
+ 
+             window.onload = () => {
++            	setQueryStringParams();
++
+                 findAllPost();
+             }
+ 
+@@ -115,6 +117,12 @@
+                 document.getElementById('list').innerHTML = html;
+             }
+ 
++         	// 게시글 상세 페이지로 이동
++            function goViewPage(id) {
++                const queryString = (location.search) ? location.search + `&id=${id}` : `?id=${id}`;
++                location.href = '/post/view.do' + queryString;
++            }
++            
+ 
+             // 페이지 HTML draw
+             function drawPage(pagination, params) {
+@@ -167,6 +175,24 @@
+                 location.href = location.pathname + '?' + new URLSearchParams(queryParams).toString();
+             }
+ 
++            // 쿼리 스트링 파라미터 셋팅
++            function setQueryStringParams() {
++
++                if ( !location.search ) {
++                    return false;
++                }
++
++                const form = document.getElementById('searchForm');
++
++                new URLSearchParams(location.search).forEach((value, key) => {
++                    if (form[key]) {
++                        form[key].value = value;
++                    }
++                })
++
++                document.getElementById('mainKeyword').value = form.keyword.value;
++            }
++            
+             /*]]>*/
+         </script>
+     </th:block>  
