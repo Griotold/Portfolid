@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.mapper.BoardMapper">
+  
+    <sql id="boardColumns">
+			  idx                               <!-- db처럼 스네이크명명 -->
+			, title
+			, content
+			
+	</sql>	
+							<!-- 스프링에서는 풀패키지명이었다. -->
+	<insert id="insertBoard" parameterType="com.example.demo.domain.BoardDTO">
+		INSERT INTO tbt_board (
+			  title
+			, content
+		) VALUES (							 <!-- reference id -->
+ 			                         <!-- 자바에서 넘어온 값에는 #{카멜케이스} -->
+		    #{title}
+		  , #{content}
+		)
+	</insert>
+	
+	<select id="selectBoardDetail" parameterType="long" resultType="com.example.demo.domain.BoardDTO">
+		SELECT
+			<include refid="boardColumns" />
+		FROM
+			tbt_board
+		WHERE
+			idx = #{idx}
+	</select>
+	
+	<update id="updateBoard" parameterType="com.example.demo.domain.BoardDTO">
+		UPDATE tbt_board
+		SET
+			  title = #{title}
+			, content = #{content}
+			
+		WHERE
+			idx = #{idx}
+	</update>
+	<!-- 삭제는 나중에 하자 -->
+	<select id="selectBoardList" parameterType="com.example.demo.domain.BoardDTO" resultType="com.example.demo.domain.BoardDTO">
+		SELECT
+			<include refid="boardColumns" />
+		FROM
+			tbt_board
+		
+		ORDER BY
+			idx DESC
+	</select>
+	<select id="selectBoardTotalCount" parameterType="com.example.demo.domain.BoardDTO" resultType="int">
+		SELECT
+			COUNT(*)
+		FROM
+			tbt_board
+		
+	</select>
+</mapper>

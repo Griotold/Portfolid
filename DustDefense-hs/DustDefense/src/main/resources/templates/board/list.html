@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="layout/basic">
+	<th:block layout:fragment="title">
+		<title>일단 메인</title>
+	</th:block>
+
+	<!--  부품 만들기 -->
+	<th:block layout:fragment="search">
+		<form action="#" id="searchform-header" class="searchform js__toggle active pull-right">
+			<input type="search" placeholder="Search..." class="input-search">
+			<button class="mdi mdi-magnify button-search" type="submit">
+				<i class="fa fa-search" aria-hidden="true"></i> <!-- i는 icon. 돋보기 모양 -->
+			</button>											<!-- 버튼은 버튼인데 돋보기모양의 버튼 -->
+		</form>
+	</th:block>
+
+	<th:block layout:fragment="content">
+		<div class="table-responsive clearfix">
+			<table class="table table-hover">
+				<thead>
+					<tr>
+						<th>번호</th>
+						<th>제목</th>
+						<th>내용</th>
+						
+					</tr>
+				</thead>
+				<tbody> <!-- 타임리프에서 if문법 -->
+						<!-- thymeleaf의 lists객체에 있는 isEmpty함수를 활용해서 백엔드에서 넘어온 -->
+						<!-- boardList가 비어있지 않으면 그 각각의 요소하나를 row로 쓰겠다. -->
+						<!-- 문법이 향상된 for문과 비슷하다 -->
+					<tr th:if="${not #lists.isEmpty( boardList )}" th:each="row : ${boardList}">
+						<td scope="row" th:text="${row.idx}"></td>
+						<td class="text-center">
+							<!-- 상세화면으로 가는 링크 -->
+							<a th:href="@{view.do( idx=${row.idx} )}" th:text="${row.title}"></a>
+						</td>
+						<td th:text="${row.content}"></td>
+					</tr>
+					<!-- if else 문법이지만 타임리프에서 unless부분에 조건 생략하면 안된다. -->
+					<tr th:unless="${not #lists.isEmpty( boardList )}">
+						<td colspan="5">조회된 결과가 없습니다.</td>
+					</tr>
+				</tbody>
+			</table>
+
+			<div class="btn_wrap text-right">
+				<a th:href="@{write.do}" class="btn btn-primary waves-effect waves-light">Write</a>
+			</div>
+
+			<th:block layout:fragment="paging">
+				<nav aria-label="Page navigation" class="text-center">
+					<ul class="pagination">
+						<li>
+							<a href="#" aria-label="Previous">
+								<span aria-hidden="true">&laquo;</span>
+							</a>
+						</li>
+						<li><a href="#">1</a></li>
+						<li><a href="#">2</a></li>
+						<li><a href="#">3</a></li>
+						<li><a href="#">4</a></li>
+						<li><a href="#">5</a></li>
+						<li>
+							<a href="#" aria-label="Next">
+								<span aria-hidden="true">&raquo;</span>
+							</a>
+						</li>
+					</ul>
+				</nav>
+			</th:block>
+		</div>
+	</th:block>
+</html> 

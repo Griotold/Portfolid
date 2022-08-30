@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org" layout:decorate="layout/basic">
+
+	<th:block layout:fragment="title">
+		<title>로그인</title>
+	</th:block>
+	<th:block layout:fragment="add-css">
+		<link rel="stylesheet" th:href="@{/css/loginpage.css}">
+	</th:block>
+  
+    <th:block layout:fragment="content">
+    	<div class="container">
+    		<form th:action="@{/login_proc}" method="post" id="FormLogin">
+        		<div class="form-group">
+		        	<div>
+		            	<label id="IdPwCheck" style="color: red; font-size:12px;"></label>
+		            </div>
+		            
+		            <input type="text" id="txtuserid" name="username" class="form-control" placeholder="ID">
+		            <label th:for="username"></label>
+		            <br>
+		            <label id="IdCheck" style="color: red; font-size:12px;"></label>
+        		</div>
+		        <div class="form-group">
+		            <input type="password" id="txtpassword" class="form-control" name="password" placeholder="PASSWORD">
+		            <label th:for="password"></label>
+		            <br>
+		            <label id="PwCheck" style="color: red; font-size:12px;"></label>
+		        </div>
+		        <div th:if="error">
+		   			<p id="valid" style="color: red; font-size:12px;"><a th:text="${exception}"></a></p>
+				</div>
+				<div class="d-grid gap-2">
+				  <button type="submit" class="btn btn-success" onclick="return CheckForm();">로그인</button>
+				</div>
+		        <br>
+		        <div class="button-group">
+			        <button type="find_id" class="btn btn-success">아이디 찾기</button>
+			        <button type="find_password" class="btn btn-success">비밀번호 찾기</button>
+			        <button type="sign_in" class="btn btn-success">회원가입</button>
+    			</div>
+    		</form>
+    		<br/>
+		</div>
+	</th:block>

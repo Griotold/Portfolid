@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="https://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5 ">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+	<h1> For Member........................ </h1>
+
+	<div sec:authorize="hasRole('USER')">HAS USER ROLE</div>
+	<div sec:authorize="hasRole('MANAGER')">HAS MANAGER ROLE</div>
+	<div sec:authorize="hasRole('ADMIN')">HAS ADMIN ROLE</div>
+	
+	<div sec:authorize="isAuthenticated()">
+		Only Authenticated user can see this Text.
+	</div>
+	
+	Authenticated username:
+	<div sec:authentication="principal.username"></div>
+	Authenticated user roles:
+	<div sec:authentication="principal.authorities"></div>
+	Authenticated email:
+	<div sec:authentication="principal.email"></div>
+	
+	<p sec:authorize="isAuthenticated()"><a th:href="@{/logout}">로그아웃</a></p>
+	
+
+</body>
+</html>

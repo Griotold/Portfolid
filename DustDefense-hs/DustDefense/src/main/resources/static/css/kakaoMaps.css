@@ -1,0 +1,63 @@
+@charset "UTF-8";
+
+.area {
+    position: absolute;
+    background: #fff;
+    border: 1px solid #888;
+    border-radius: 3px;
+    font-size: 12px;
+    top: -5px;
+    left: 15px;
+    padding:2px;
+}
+
+.info {
+    font-size: 12px;
+    padding: 5px;
+}
+.info .title {
+    font-weight: bold;
+}
+
+#btnPathFinder{
+	width: 150px;
+    height: 45px;
+    font-size: 17px;
+    margin-top: 10px;
+    color: #fff;
+    background-color: #13be46;
+    border: none;
+    border-radius: 3px;
+    outline: 0;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+#btnFineDustStatus{
+	width: 150px;
+    height: 45px;
+    font-size: 17px;
+    margin-top: 10px;
+    color: #fff;
+    background-color: #13be46;
+    border: none;
+    border-radius: 3px;
+    outline: 0;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+.pathFinder{
+	width: 150px;
+    height: 45px;
+    font-size: 17px;
+    margin-top: 10px;
+    color: #fff;
+    background-color: #13be46;
+    border: none;
+    border-radius: 3px;
+    outline: 0;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+/* .txt{
+	font-size:15px;
+} */

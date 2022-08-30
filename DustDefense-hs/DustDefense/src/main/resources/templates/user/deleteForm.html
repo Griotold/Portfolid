@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="layout/basic">
+	<th:block layout:fragment="title">
+		<title>회원탈퇴</title>
+	</th:block>
+	
+	<th:block layout:fragment="sidebar">
+		<h1>회원탈퇴</h1>
+		<div class="col-md-3">
+			<!-- 사이드 바 메뉴-->
+	  		<!-- 패널 타이틀1 -->
+			<div class="panel panel-info">
+	    		<div class="panel-heading">
+	      			<h3 class="panel-title">Panel Title</h3>
+	    		</div>
+	    		<!-- 사이드바 메뉴목록1 -->
+	    		<ul class="list-group">
+	      			<li class="list-group-item"><a th:href="@{/user/mypage.do}">마이페이지</a></li>
+	      			<li class="list-group-item"><a href="#">작성글</a></li>
+	      			<li class="list-group-item"><a href="#">작성댓글</a></li>
+	      			<li class="list-group-item"><a th:href="@{/user/edit.do}">개인정보수정</a></li>
+	      			<li class="list-group-item"><a href="@{/user/delete.do}">회원탈퇴</a></li>
+	    		</ul>
+			</div>
+		</div> 
+	</th:block>
+	<th:block layout:fragment="content">
+		<div class="col-md-9">                                                                                <!--th:onsubmit="return join(this);"  -->
+			<form id="delete_form" class="form-horizontal form-view" th:action="@{/user/delete.do}" th:object="${user}" method="post">
+					<div class="form-group">
+						<label for="inp-type-1" class="col-sm-2 control-label">정확한 본인 확인을 위해 비밀번호를 입력해주세요.</label>
+						<div class="col-sm-10">
+							<p>탈퇴한 아이디로는 재가입이 불가능합니다. </p>
+						</div>
+						<div class="col-sm-10">
+							<p>탈퇴한 닉네임으로는 재가입이 불가능합니다. </p>
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="inp-type-1" class="col-sm-2 control-label">비밀번호</label>
+						<div class="col-sm-10">
+							<input type="password" class="form-control" th:field="*{password}">
+						</div>
+					</div>			
+					<input type="submit" class="btn" value="회원탈퇴">
+					<input type="button" class="btn" value="메인으로" onclick="location.href='/board/list.do'">
+			</form>
+		</div>
+	</th:block>

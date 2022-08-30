@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.demo.domain.post.PostMapper">
+
+<!-- tb_post 테이블 전체 컬럼 -->
+    <sql id="postColumns">
+          id
+        , title
+        , content
+        , user_id
+        , view_cnt
+        , notice_yn
+        , delete_yn
+        , created_date
+
+    </sql>
+
+
+    <!-- 게시글 저장 -->
+    <insert id="save" parameterType="com.example.demo.domain.post.PostRequest">
+        INSERT INTO community (
+              title
+           , content
+           , user_id
+           , view_cnt
+           , notice_yn
+           , delete_yn
+           , created_date
+        ) VALUES (
+              #{title}
+            , #{content}
+            , #{userId}
+            , 0
+            , #{noticeYn}
+            , 0
+            , SYSDATE
+
+        )
+    </insert>
+
+
+    <!-- 게시글 상세정보 조회 -->
+
+   <select id="findById" parameterType="long" resultType="com.example.demo.domain.post.PostResponse">
+
+        SELECT
+            <include refid="postColumns" />
+        FROM
+            community
+        WHERE
+            id = #{value}
+    </select>
+
+
+    <!-- 게시글 수정 -->
+    <update id="update" parameterType="com.example.demo.domain.post.PostRequest">
+        UPDATE community
+        SET
+              title = #{title}
+            , content = #{content}
+            , user_id = #{userId}
+            , notice_yn = #{noticeYn}
+
+        WHERE
+            id = #{id}
+    </update>
+
+
+    <!-- 게시글 삭제 -->
+    <delete id="deleteById" parameterType="long">
+        UPDATE community
+        SET
+            delete_yn = 1
+        WHERE
+            id = #{id}
+    </delete>
+
+
+    <!-- 게시글 리스트 조회 -->
+
+
+    <select id="findAll" parameterType="com.example.demo.common.dto.SearchDto" resultType="com.example.demo.domain.post.PostResponse">
+
+        SELECT
+            <include refid="postColumns" />
+        FROM
+            community
+        WHERE
+            delete_yn = 0
+         <include refid="search" />
+        ORDER BY
+            id DESC
+        OFFSET #{pagination.limitStart} ROWS FETCH FIRST #{recordSize} ROWS ONLY
+    </select>
+    
+    <!-- 게시글 수 카운팅 -->
+    <select id="count" parameterType="com.example.demo.common.dto.SearchDto" resultType="int">
+       SELECT
+          COUNT(*)
+       FROM
+          community
+       WHERE
+          delete_yn = 0
+          <include refid="search" />
+    </select>
+    
+     <!-- 게시글 검색 -->
+    <sql id="search">
+        <!-- 검색 키워드가 있을 때 -->
+        <if test="keyword != null and keyword != ''">
+            <choose>
+                <!-- 검색 유형이 있을 때 -->
+                <when test="searchType != null and searchType != ''">
+                    <choose>
+                        <when test="'title'.equals( searchType )">
+                            AND title LIKE '%' || #{keyword} || '%'
+                        </when>
+                        <when test="'content'.equals( searchType )">
+                            AND content LIKE '%' || #{keyword} || '%'
+                        </when>
+                        <when test="'userId'.equals( searchType )">
+                            AND user_id LIKE '%' || #{keyword} || '%'
+                        </when>
+                    </choose>
+                </when>
+                <!-- 전체 검색일 때 -->
+                <otherwise>
+                    AND (
+                           title LIKE '%' || #{keyword} || '%'
+                        OR content LIKE '%' || #{keyword} || '%'
+                        OR user_id LIKE '%' || #{keyword} || '%'
+                    )
+                </otherwise>
+            </choose>
+        </if>
+    </sql>
+    
+
+</mapper>

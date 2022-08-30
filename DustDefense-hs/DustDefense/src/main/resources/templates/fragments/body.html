@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"> 
+	  
+	<body th:fragment="main-body">
+    <!-- <div class="fixed-navbar">
+        <div class="pull-left">
+            <h1 class="page-title">게시판</h1>
+        </div>
+    </div> -->
+		<!-- /.fixed-navbar -->
+		<!-- 최상단 네브바 -->
+		<div class="container">
+		    <header class="d-flex  justify-content-between">
+		      <div class="img"> 
+		      <img id="img" src ="/img/logo.png" width = "150px" height="45px"/>
+		      </div> 
+		      <div class="text-end">
+		        <button type="button" class="btn btn-outline-primary" onclick="location.href='/login'">로그인</button>
+		        <button type="button" class="btn btn-outline-primary" onclick="location.href='user/join.do'">회원가입</button>
+		        <button type="button" class="btn btn-outline-primary" onclick="location.href='user/mypage.do'">마이페이지</button>
+		      </div>
+		      <!-- <ul class="nav justify-content-center">
+		        <li><a href="#" class="nav-link px-2 link-dark">one</a></li>
+		        <li><a href="#" class="nav-link px-2 link-dark">two</a></li>
+		        <li><a href="#" class="nav-link px-2 link-dark">three</a></li>
+		        <li><a href="#" class="nav-link link-dark">four</a></li>
+		        <li><a href="#" class="nav-link px-2 link-dark">five</a></li>
+		        <li><a href="#" class="nav-link px-2 link-dark">five</a></li>
+		      </ul>-->
+		    </header>
+		</div>
+		  
+	     
+		<nav class="navbar navbar-expand-lg navbar-light bg-light"> 
+		  <div class="container-fluid">
+		    <a th:href="@{/}" class="navbar-brand" >Fresh Air</a>
+		    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+		      <span class="navbar-toggler-icon"></span>
+		    </button>
+		    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+		      <ul class="navbar-nav">
+		        <li class="nav-item">
+		          <a class="nav-link active" aria-current="page" href="#">사이트 소개</a>
+		        </li>
+		        <li class="nav-item">
+		          <a class="nav-link" href="#">분석 & 예측</a>
+		        </li>
+		        <li class="nav-item">
+		          <a class="nav-link" href="#">정보</a>
+		        </li>
+		        <li class="nav-item dropdown">
+		          <a class="nav-link dropdown-toggle" onclick="location.href='/post/list.do'" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+		            커뮤니티
+		          </a>
+		          <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+		            <li><a class="dropdown-item" href="#">자유게시판</a></li>
+		            <li><a class="dropdown-item" href="#">홈페이지 개선의견</a></li>
+		            <li><a class="dropdown-item" href="#">Something else here</a></li>
+		          </ul>
+		        </li>
+		        <!-- <li class="nav-item">
+		          <a class="nav-link" href="#">로그인</a>
+		        </li> -->
+		        <!-- <li class="nav-item">
+		        	현재 board/가 디폴트로 들어가고 있기 때문에 /user/join.do로 해줘야 한다.
+					<a class="nav-link" href="#">로그인</a>
+				</li>
+		        <li class="nav-item">
+		          <a th:href="@{/user/join.do}" class="nav-link">회원가입</a>
+		        </li>
+		        <li class="nav-item">
+		          <a th:href="@{/user/mypage.do}" class="nav-link" >마이페이지</a>
+		        </li> -->
+		      </ul>
+		    </div>
+		  </div>
+		</nav>
+		<div id="wrapper">
+			<div class="main-content">
+				<div class="row row-inline-block small-spacing">
+					<div class="col-xs-12">
+						<!-- <div class="box-content"> -->
+							<div class="clearfix">
+								<h4 class="box-title pull-left"></h4>
+								<!-- /.box-title -->
+
+								<th:block layout:fragment="search"></th:block>
+
+							</div>
+							<!-- //.clearfix -->
+							<!-- layout:fragment="content" 부분만 작성해주는 것이다. -->
+							<!-- list나, view.html 같은 파일을 만든다는 것이다. -->
+							<th:block layout:fragment="sidebar"></th:block>
+							<th:block layout:fragment="content"></th:block>
+
+							<th:block layout:fragment="paging"></th:block>
+						<!-- /div> -->
+						<!-- /.box-content -->
+
+						<th:block layout:fragment="add-content"></th:block>
+
+					</div>
+					<!-- /.col-xs-12 -->
+				</div>
+				<!-- /.row row-inline-block small-spacing -->
+				<!-- footer -->
+				<footer class="footer">
+					<ul class="list-inline">
+						<li>2022 © Fresh Bicycle.</li>
+					</ul>
+				</footer>
+				
+			  
+			</div>
+			<!-- /.main-content -->
+		</div>
+		<!-- /#wrapper -->
+
+		<script th:src="@{/scripts/jquery.min.js}"></script>
+		<script th:src="@{/plugin/bootstrap/js/bootstrap.min.js}"></script>
+		<!-- 사이드바 -->
+		<script th:src="@{/plugin/bootstrap/js/bootstrap.bundle.min.js}"></script>
+		<!-- <script th:src="@{/plugin/mCustomScrollbar/jquery.mCustomScrollbar.concat.min.js}"></script> -->
+		<script th:src="@{/scripts/main.js}"></script>
+		<script th:src="@{/scripts/common.js}"></script>
+	    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	    
+	    <!-- 로그인 첵 -->
+	    <script src="/js/login/loginCheck.js"></script>
+	    
+	    
+    	<th:block layout:fragment="script"></th:block>
+		
+	</body>
+</html> 
+

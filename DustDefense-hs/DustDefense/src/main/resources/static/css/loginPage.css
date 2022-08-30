@@ -1,0 +1,162 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body { 
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+}
+in
+h1{ 
+        display: line-block;
+        position: relative;
+        width: 200px;
+        height: 200px;
+        line-height: 250px;
+}
+
+/* #FormLogin{
+    display: block;
+    position: absolute;
+    top: 150%; left: 50%;
+    transform: translate(-50%, -50%);
+    border-top: 8px solid #13be46;
+    border-radius: 5px;
+    box-shadow: 0 0px 70px rgba(0, 0, 0, 0.1);
+} */
+
+
+#txtuserid, #txtpassword{
+    display: block;
+    font-size: 15px;
+    width: 100%;
+    height: 150%;
+    padding: 15px 15px 10px 8px;
+    margin-bottom: 5px;
+    color: #000000;
+    border : 0.5px solid rgba(0,0,0,0.2);
+    border-radius: 3px;
+    outline: 0;
+    background-color: #fff
+}
+
+#IdCheck{
+    padding-top: 68px;
+    padding-left : 10px;
+}
+
+#PwCheck{
+    padding-top: 48px;
+    padding-left : 2px;
+}
+
+/* 버튼 관련 */
+
+#loginBtn{ 
+    width: 500px;
+    height: 45px;
+    font-size: 17px;
+    margin-top: 5px;
+    color: #fff;
+    background-color: #13be46 !important;
+    border: none;
+    border-radius: 3px;
+    outline: 0;
+    cursor: pointer;
+    transition: 0.3s ease;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+#loginBtn:hover{
+    background-color:  #0fa03b;
+}
+
+
+.btn-outline-primary
+ {
+    color: #0d6efd;
+  	border-color: #0000;
+    
+ }
+
+.btn-outline-primary:hover {
+    background-color: #0d6efd;;
+}
+
+.btn-group {
+    height: 12px;
+    
+}
+
+/* 로그인이랑 비밀번호 입력 글씨 작아지는거 */ 
+
+ form{
+    padding:10px;
+}
+.form-group{
+    position:relative;
+    margin:10px 0;
+}
+.form-group > input{
+    background:transparent;
+    border:none;
+    border-bottom: solid 1px #ccc;
+    padding:20px 0px 5px 0px;
+    font-size:12px;
+    width:100%;
+}
+input::placeholder{
+   color:transparent;
+}
+input:placeholder-shown + label{
+    color:#aaa;
+    font-size:12px;
+    padding-left:1px;
+    top:15px;
+
+}
+input:focus + label, label{
+    color:#8aa1a1;
+    font-size:6pt;
+    pointer-events: none;
+    position: absolute;
+    left:0px;
+    top:0px;
+    transition: all 0.2s ease ;
+    -webkit-transition: all 0.2s ease;
+    -moz-transition: all 0.2s ease;
+    -o-transition: all 0.2s ease;
+}
+
+input:focus, input:not(:placeholder-shown){
+    border-bottom: solid 1px #8aa1a1;
+    outline:none;
+}
+input[type=submit]{
+    background-color: #8aa1a1;
+    border:none;
+    color:white;
+    border-radius: 5px;
+    width:100%;
+    height:35px;
+    font-size: 14pt;
+    margin-top:100px;
+}
+/* 아이디 찾기 버튼 친구들 간격 동일*/
+/* .button-group{ 
+	margin: 0;
+    padding: 0;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -moz-flex;
+    display: -webkit-flex;
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+} */
+/* 아이디 찾기 버튼 친구들 오른쪽에 몰아두기*/
+.button-group{
+	float: right;
+}
