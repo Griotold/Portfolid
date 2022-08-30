@@ -48,6 +48,7 @@
     - 자전거 경로에 따른 미세먼지 흡입량을 계산해주는 기능 구현
 - **황채은**
     - `MyBatis`를 이용한 게시판 글 등록, 수정, 삭제와 페이징 기능 구현
+
 ### 프로젝트 수행과정
 - **전체 수행 기간** : 
   - 2022.07.14 ~ 2022.08.25
@@ -65,3 +66,26 @@
   - 테스트 및 오류 수정
 - **보고서 작성 : 8.23 ~ 8.25** 
   - ppt제작, 최종 결과 보고서 작성
+
+### 데이터 흐름도
+![Untitled 1](https://user-images.githubusercontent.com/101307758/187362492-f8151665-25bd-4604-84de-6df5037f707e.png)
+![Untitled 2](https://user-images.githubusercontent.com/101307758/187362547-74122663-88ec-4c6e-bbd3-e9ec639eae90.png)
+
+### 한계점
+- **웹 개발**
+    - 전국의 미세먼지 현황을 지도에 표시하지 못함
+    - 회원 탈퇴, 정보 수정 기능 등이 미구현
+    - 댓글 기능 미구현
+    - 게시물에 사진 파일 첨부 기능 미구현
+- **데이터 분석 및 예측**
+    - 전국적인 범위로 하지 못함
+    - 일별 데이터나 시간별 데이터가 아닌 월별 데이터를 사용
+    
+### 향후계획
+- 미구현된 기능들을 구현
+- 지속적인 코드 관리
+- 추가적인 데이터 수집을 통해 분석을 진행, 프로그램의 지역 범위를 전국적인 범위로 확장
+
+### 결과자료
+- [결과 pdf](https://drive.google.com/file/d/1rprsRpCsbORXIh31heOpiuf3NFGgFiRn/view?usp=sharing)
+- [시연 영상](https://drive.google.com/file/d/1FJqKpRm6rcVQP-fEumiQfTOXnc46zm5v/view?usp=sharing)
